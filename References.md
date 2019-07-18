@@ -7,6 +7,7 @@ https://swift.org
 
 # ¿Cómo leer la documentación oficial de Apple?
 https://www.hackingwithswift.com/articles/167/how-to-read-apples-developer-documentation
+https://learnappmaking.com/apple-developer-documentation-how-to/
 
 # Best practices
 
@@ -33,3 +34,31 @@ https://books.apple.com/es/book/app-development-with-swift/id1465002990?l=en
 2) Stack Overflow
 3) Ray Wenderlich
 4) Medium
+
+# Cheat sheet
+https://koenig-media.raywenderlich.com/uploads/2014/06/RW-Swift-Cheatsheet-0_8.pdf
+
+# Herramientas para desarrollo
+
+- iOS development: 
+  - Xcode
+  - Interface Builder
+  - Swift
+- Diseño gráfico:
+  - Sketch
+  - Invision
+  - PaintCode
+- Gestor de paquetes:
+  - CocoaPods (Antes de Swift Package Manager).
+- Librerías:
+  - Alamofire
+  - Moya
+  - Siesta
+  - MBProgressHUD
+  - Charts
+- Storage y Bases de datos:
+  - Firebase
+  - Realm
+  - Core Data
+- Integración contínua:
+  - Fastlane
