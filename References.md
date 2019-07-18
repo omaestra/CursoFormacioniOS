@@ -1,5 +1,9 @@
 # Documentación oficial
+## Apple developer docs
 https://developer.apple.com/documentation/
+
+## Swift
+https://swift.org
 
 # ¿Cómo leer la documentación oficial de Apple?
 https://www.hackingwithswift.com/articles/167/how-to-read-apples-developer-documentation
