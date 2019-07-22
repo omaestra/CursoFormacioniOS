@@ -12,7 +12,7 @@ https://learnappmaking.com/apple-developer-documentation-how-to/
 # Best practices
 
 ## Swift API Design Guidelines
-https://swift.org/documentation/api-design-guidelines/#general-conventions
+[Swift](https://swift.org/documentation/api-design-guidelines/#general-conventions)
 
 ## Swift Best Practices Medium article
 https://medium.com/@spmandrus/basics-swift-best-practices-175c21631aad
