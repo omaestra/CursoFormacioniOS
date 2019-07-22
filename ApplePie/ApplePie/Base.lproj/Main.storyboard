@@ -21,7 +21,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ofv-ai-VbB">
                                 <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tree 0" translatesAutoresizingMaskIntoConstraints="NO" id="lDu-hR-8Fv">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tree 2" translatesAutoresizingMaskIntoConstraints="NO" id="tkx-Ed-RFB">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="494"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="g24-ax-wox">
@@ -266,7 +266,6 @@
                     <connections>
                         <outlet property="correctWordLabel" destination="ZiZ-A5-b7z" id="dnG-EZ-jNT"/>
                         <outlet property="scoreLabel" destination="S8Q-P5-oHP" id="4a0-CO-14V"/>
-                        <outlet property="treeImageView" destination="lDu-hR-8Fv" id="KxS-oE-r4b"/>
                         <outletCollection property="letterButtons" destination="0SL-9w-k2n" collectionClass="NSMutableArray" id="E8d-nl-1Zj"/>
                         <outletCollection property="letterButtons" destination="bCQ-Zl-q7U" collectionClass="NSMutableArray" id="240-TT-qMm"/>
                         <outletCollection property="letterButtons" destination="Uye-1D-Y1a" collectionClass="NSMutableArray" id="40c-Ss-cfX"/>
@@ -300,6 +299,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Tree 0" width="600" height="945"/>
+        <image name="Tree 2" width="600" height="945"/>
     </resources>
 </document>

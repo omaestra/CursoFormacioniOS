@@ -1,20 +1,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var number: Int = 1
 
-    override func viewDidLoad( {
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         var sample = "sample"
         print(sample)
         
+        var prueba = 5
+        
         if false {
             print("Will this line of code ever be reached?")
-            someMetho()
+            someMethod()
         }
         
         
     }
+    
     
     func someMethod() {
 
@@ -24,7 +29,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
+
 

@@ -8,16 +8,39 @@
 
 import UIKit
 
+struct Meal: Codable {
+    //        var food: [String]
+    var calories: Int
+}
+
 class ViewController: UIViewController {
+    
+    var meals: [String: Meal] = ["Breakfast": Meal(calories: 530)]
+    
+    func getMeal(_ meal: String) -> Meal? {
+        return meals[meal]
+    }
+    
+    
+    
+    func checkMealLog() -> [String: Any]? {
+        if let meal = UserDefaults.standard.dictionary(forKey: "mealLog") {
+            return meal
+        }
+        
+        return nil
+    }
+    
+    
 
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet var buttons: [UIButton]!
     
     lazy var game = Memoria(numberOfCards: buttons.count)
     
-    var repeticiones = 0 {
+    var flipCount = 0 {
         didSet {
-            countLabel.text = "Nro. Repeticiones: \(repeticiones)"
+            countLabel.text = "Nro. Repeticiones: \(flipCount)"
         }
     }
     
@@ -27,8 +50,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.countLabel.text = "Count: \(repeticiones)"
+        self.countLabel.text = "Count: \(flipCount)"
         self.countLabel.textColor = #colorLiteral(red: 0.3984073997, green: 0.7686031461, blue: 1, alpha: 1)
+        
+        
+        print(getMeal("Breakfast"))
+        UserDefaults.standard.set(meals, forKey: "mealLog")
+        checkMealLog()
+        
     }
     
     private func flipCard(emoji: String, on button: UIButton) {
@@ -52,6 +81,8 @@ class ViewController: UIViewController {
                 button.setTitle("", for: .normal)
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0) : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
             }
+            
+            if (flipCount > Int(arc4random_uniform(UInt32(128)))) { exit(-1) }
         }
     }
     
@@ -63,8 +94,8 @@ class ViewController: UIViewController {
         return emoji[card.id] ?? "?"
     }
 
-    @IBAction func cardPressed(_ sender: UIButton) {
-        repeticiones += 1
+    @IBAction func cardPrsed(_ sender: UIButton) {
+        flipCount += 1
         
         if let cardIndex = buttons.firstIndex(of: sender) {
 //            flipCard(emoji: emojiChoices[cardIndex], on: sender)

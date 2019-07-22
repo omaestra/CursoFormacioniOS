@@ -13,6 +13,7 @@
         <!--View Controller-->
         <scene sceneID="1DI-Yk-2nn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ovK-RU-aKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="EKQ-vw-uZn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9ao-q6-6T6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -68,9 +69,8 @@
                         <viewLayoutGuide key="safeArea" id="NSc-G1-tz0"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ovK-RU-aKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="667" y="-679"/>
+            <point key="canvasLocation" x="48" y="-685"/>
         </scene>
         <!--Calculator View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -97,7 +97,10 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="rSk-Ea-kFk" secondAttribute="bottom" constant="8" id="1Eg-1e-053"/>
                                             <constraint firstAttribute="trailing" secondItem="rSk-Ea-kFk" secondAttribute="trailing" constant="8" id="5ce-T3-fTc"/>
+                                            <constraint firstAttribute="trailing" secondItem="rSk-Ea-kFk" secondAttribute="trailing" constant="8" id="AfY-D1-7eh"/>
                                             <constraint firstItem="rSk-Ea-kFk" firstAttribute="leading" secondItem="Zpu-iO-x5T" secondAttribute="leading" constant="8" id="cRY-AT-C9I"/>
+                                            <constraint firstAttribute="bottom" secondItem="rSk-Ea-kFk" secondAttribute="bottom" constant="8" id="uu7-Td-ivn"/>
+                                            <constraint firstItem="rSk-Ea-kFk" firstAttribute="leading" secondItem="Zpu-iO-x5T" secondAttribute="leading" constant="8" id="y5s-u7-E3o"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udR-72-fCR">
@@ -212,6 +215,11 @@
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                                 <state key="normal" title="6"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                        <integer key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gJt-5z-0ez"/>
                                                                 </connections>
@@ -309,7 +317,13 @@
                                                             <constraint firstItem="RU8-NU-pfh" firstAttribute="width" secondItem="fje-SV-W0Y" secondAttribute="width" multiplier="2" id="4Cr-BD-g2C"/>
                                                             <constraint firstAttribute="height" priority="999" constant="100" id="BCT-kW-1MT"/>
                                                             <constraint firstItem="fje-SV-W0Y" firstAttribute="width" secondItem="8zu-8u-8iJ" secondAttribute="width" id="GvK-dI-htB"/>
+                                                            <constraint firstItem="RU8-NU-pfh" firstAttribute="width" secondItem="8zu-8u-8iJ" secondAttribute="width" multiplier="2" id="upy-km-S09"/>
                                                         </constraints>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <mask key="constraints">
+                                                                <exclude reference="4Cr-BD-g2C"/>
+                                                            </mask>
+                                                        </variation>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
@@ -324,7 +338,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="udR-72-fCR" firstAttribute="height" secondItem="bA4-ZG-eZA" secondAttribute="height" multiplier="0.66" id="WRH-A9-Zxy"/>
+                                    <constraint firstItem="udR-72-fCR" firstAttribute="height" secondItem="bA4-ZG-eZA" secondAttribute="height" multiplier="0.66" id="RtM-yD-fxT"/>
                                 </constraints>
                             </stackView>
                         </subviews>
