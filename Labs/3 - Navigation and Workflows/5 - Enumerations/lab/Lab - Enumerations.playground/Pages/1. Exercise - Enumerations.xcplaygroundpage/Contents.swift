@@ -46,11 +46,10 @@ struct Card {
     var value: Value
 }
 
-let card1 = Card(suit: .clubs, value: .ace)
-let card2 = Card(suit: .hearts, value: .jack)
 /*:
  How many values can playing cards have? How many values can `Int` be? It would be safer to have an enum for the card's value as well. Inside the struct above, create an enum for `Value`. It should have cases for `ace`, `two`, `three`, `four`, `five`, `six`, `seven`, `eight`, `nine`, `ten`, `jack`, `queen`, `king`. Change the type of `value` from `Int` to `Value`. Initialize two `Card` objects and print a statement for each that details the card's value and suit.
  */
-
+let card1 = Card(suit: .clubs, value: .ace)
+let card2 = Card(suit: .hearts, value: .jack)
 
 //: page 1 of 2  |  [Next: App Exercise - Swimming Workouts](@next)
