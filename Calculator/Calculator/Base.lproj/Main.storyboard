@@ -13,7 +13,6 @@
         <!--View Controller-->
         <scene sceneID="1DI-Yk-2nn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ovK-RU-aKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="EKQ-vw-uZn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9ao-q6-6T6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -69,6 +68,7 @@
                         <viewLayoutGuide key="safeArea" id="NSc-G1-tz0"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ovK-RU-aKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="48" y="-685"/>
         </scene>
@@ -215,11 +215,6 @@
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                                 <state key="normal" title="6"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                                        <integer key="value" value="1"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gJt-5z-0ez"/>
                                                                 </connections>
@@ -357,12 +352,12 @@
                         <outletCollection property="numbersPad" destination="6a6-hx-nR9" collectionClass="NSMutableArray" id="B9h-Ox-1PA"/>
                         <outletCollection property="numbersPad" destination="yYO-bA-5bN" collectionClass="NSMutableArray" id="Qsl-ec-K5z"/>
                         <outletCollection property="numbersPad" destination="Xfq-mE-pb7" collectionClass="NSMutableArray" id="Qjl-AC-hy2"/>
-                        <outletCollection property="numbersPad" destination="TeF-ec-wgH" collectionClass="NSMutableArray" id="sB8-HP-5F9"/>
                         <outletCollection property="numbersPad" destination="dfO-hx-NHu" collectionClass="NSMutableArray" id="mFn-w5-sAJ"/>
                         <outletCollection property="numbersPad" destination="dp1-mc-RNd" collectionClass="NSMutableArray" id="eHW-JO-lfx"/>
                         <outletCollection property="numbersPad" destination="tic-8d-09O" collectionClass="NSMutableArray" id="3Ed-Y7-wRU"/>
                         <outletCollection property="numbersPad" destination="CMb-jR-VCA" collectionClass="NSMutableArray" id="5mj-4B-ppB"/>
                         <outletCollection property="numbersPad" destination="RU8-NU-pfh" collectionClass="NSMutableArray" id="Ycp-pZ-rZD"/>
+                        <outletCollection property="numbersPad" destination="TeF-ec-wgH" collectionClass="NSMutableArray" id="bAW-wf-h8N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -16,6 +16,23 @@ class ViewController: UIViewController {
     
     @IBOutlet var letterButtons: [UIButton]!
     
+    lazy var alertController: UIAlertController = {
+        let alertViewController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alertViewController.addAction(confirmAction)
+        alertViewController.addAction(confirmAction)
+        
+        return alertViewController
+    }()
+    
     var listOfWords = ["curso", "formacion", "desarrollo", "swift", "bug", "ios"]
     var incorrectMovesAllowed = 7
     
@@ -36,6 +53,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         newRound()
+        
+//        letterButtons.forEach({
+//            $0.layer.cornerRadius = 10.0
+//            $0.backgroundColor = .green
+//        })
+        
+        
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func newRound() {
@@ -64,7 +90,7 @@ class ViewController: UIViewController {
         letterButtons.forEach( {$0.isEnabled = enable })
     }
     
-    func updateGameState() {
+    func updateGameState() {        
         if currentGame.incorrectMovesRemaining == 0 {
             totalLosses += 1
         } else if currentGame.word == currentGame.formattedWord {
@@ -85,4 +111,5 @@ class ViewController: UIViewController {
     }
     
 }
+
 
