@@ -129,7 +129,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="32W-N7-lUU">
-                                <rect key="frame" x="20" y="331" width="374" height="234"/>
+                                <rect key="frame" x="20" y="170.5" width="374" height="234"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJM-OW-suZ">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
@@ -235,15 +235,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9Ws-yK-cnQ" firstAttribute="centerY" secondItem="UFt-4V-429" secondAttribute="centerY" id="1fU-GJ-l47"/>
+                            <constraint firstItem="32W-N7-lUU" firstAttribute="top" secondItem="LkI-w5-cX0" secondAttribute="bottom" constant="24" id="4gf-9o-U14"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RBp-C1-LYf" secondAttribute="trailing" id="6b9-7z-k4A"/>
                             <constraint firstItem="LkI-w5-cX0" firstAttribute="top" secondItem="4BZ-J6-H3d" secondAttribute="top" constant="20" id="8FE-UY-0AS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Ws-yK-cnQ" secondAttribute="trailing" id="BQY-6c-77w"/>
                             <constraint firstItem="32W-N7-lUU" firstAttribute="leading" secondItem="UFt-4V-429" secondAttribute="leadingMargin" id="MyY-45-zD3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8lc-SY-y0M" secondAttribute="trailing" id="O87-XZ-lID"/>
+                            <constraint firstItem="RBp-C1-LYf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="32W-N7-lUU" secondAttribute="bottom" constant="24" id="OO6-G5-hXe"/>
                             <constraint firstItem="8lc-SY-y0M" firstAttribute="centerY" secondItem="UFt-4V-429" secondAttribute="centerY" id="ZGW-KU-mzW"/>
                             <constraint firstItem="RBp-C1-LYf" firstAttribute="leading" secondItem="UFt-4V-429" secondAttribute="leadingMargin" id="ehZ-rM-eJ2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="32W-N7-lUU" secondAttribute="trailing" id="eoM-b5-MDa"/>
-                            <constraint firstItem="32W-N7-lUU" firstAttribute="centerY" secondItem="UFt-4V-429" secondAttribute="centerY" id="etr-LQ-kNq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LkI-w5-cX0" secondAttribute="trailing" id="gNS-NA-uKb"/>
                             <constraint firstItem="8lc-SY-y0M" firstAttribute="leading" secondItem="UFt-4V-429" secondAttribute="leadingMargin" id="h1d-W5-lBQ"/>
                             <constraint firstItem="9Ws-yK-cnQ" firstAttribute="leading" secondItem="UFt-4V-429" secondAttribute="leadingMargin" id="hQb-dF-mLb"/>

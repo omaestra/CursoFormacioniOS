@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         content.title = "Title"
         content.body = "Body"
         content.sound = UNNotificationSound.default
+        let imageURL = Bundle.main.url(forResource: "medal", withExtension: ".png")!
+        content.attachments = [try! UNNotificationAttachment(identifier: "image", url: imageURL, options: nil)]
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         

@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Athlete {
+struct Athlete: Codable {
     var name: String
     var age: Int
     var league: String
     var team: String
+
 }
 
 extension Athlete: CustomStringConvertible {
