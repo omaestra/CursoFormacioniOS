@@ -14,12 +14,13 @@ struct SwimmingWorkout {
     var time: Double
     var stroke: Stroke
     
-    static var freestyleWorkouts: [SwimmingWorkout] = []
-    static var butterflyWorkouts: [SwimmingWorkout] = []
+    static var freestyleWorkouts: [SwimmingWorkout] = [SwimmingWorkout]()
+    static var butterflyWorkouts: [SwimmingWorkout] = Array<SwimmingWorkout>()
     static var backstrokeWorkouts: [SwimmingWorkout] = []
     static var breaststrokeWorkouts: [SwimmingWorkout] = []
     
     func save() {
+        
         switch self.stroke {
         case .backstroke:
             SwimmingWorkout.backstrokeWorkouts.append(self)

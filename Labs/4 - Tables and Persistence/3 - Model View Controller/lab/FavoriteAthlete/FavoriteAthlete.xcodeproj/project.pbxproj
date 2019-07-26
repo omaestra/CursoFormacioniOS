@@ -12,6 +12,8 @@
 		A94375B51E4648230053B419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A94375B41E4648230053B419 /* Assets.xcassets */; };
 		A94375B81E4648230053B419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94375B61E4648230053B419 /* LaunchScreen.storyboard */; };
 		A9FE274F1E4A8F0E00F01A14 /* AthleteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE274E1E4A8F0E00F01A14 /* AthleteTableViewController.swift */; };
+		CE5FCD2922EA3F5800A2AF2B /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5FCD2822EA3F5800A2AF2B /* Athlete.swift */; };
+		CE5FCD2B22EA402400A2AF2B /* AthleteFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5FCD2A22EA402400A2AF2B /* AthleteFormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		A94375B71E4648230053B419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A94375B91E4648230053B419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9FE274E1E4A8F0E00F01A14 /* AthleteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AthleteTableViewController.swift; sourceTree = "<group>"; };
+		CE5FCD2822EA3F5800A2AF2B /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
+		CE5FCD2A22EA402400A2AF2B /* AthleteFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteFormViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,9 @@
 		A94375AC1E4648230053B419 /* FavoriteAthlete */ = {
 			isa = PBXGroup;
 			children = (
+				CE5FCD2722EA3F4700A2AF2B /* Controller */,
+				CE5FCD2622EA3F4300A2AF2B /* View */,
+				CE5FCD2522EA3F3D00A2AF2B /* Model */,
 				A94375AD1E4648230053B419 /* AppDelegate.swift */,
 				A94375B11E4648230053B419 /* Main.storyboard */,
 				A9FE274E1E4A8F0E00F01A14 /* AthleteTableViewController.swift */,
@@ -62,6 +69,29 @@
 				A94375B91E4648230053B419 /* Info.plist */,
 			);
 			path = FavoriteAthlete;
+			sourceTree = "<group>";
+		};
+		CE5FCD2522EA3F3D00A2AF2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE5FCD2822EA3F5800A2AF2B /* Athlete.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE5FCD2622EA3F4300A2AF2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE5FCD2722EA3F4700A2AF2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE5FCD2A22EA402400A2AF2B /* AthleteFormViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +135,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -136,7 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5FCD2B22EA402400A2AF2B /* AthleteFormViewController.swift in Sources */,
 				A9FE274F1E4A8F0E00F01A14 /* AthleteTableViewController.swift in Sources */,
+				CE5FCD2922EA3F5800A2AF2B /* Athlete.swift in Sources */,
 				A94375AE1E4648230053B419 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
