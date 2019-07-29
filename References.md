@@ -74,7 +74,7 @@ https://koenig-media.raywenderlich.com/uploads/2014/06/RW-Swift-Cheatsheet-0_8.p
   
   
   
-  var meals: [Meal] = {
+`  var meals: [Meal] = {
         var breakfast = Meal(name: "Breakfast", food: [])
         var lunch = Meal(name: "Lunch", food: [])
         var dinner = Meal(name: "Dinner", food: [])
@@ -93,3 +93,4 @@ https://koenig-media.raywenderlich.com/uploads/2014/06/RW-Swift-Cheatsheet-0_8.p
 
         return [breakfast, lunch, dinner]
     }()
+`
