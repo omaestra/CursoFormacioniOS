@@ -43,6 +43,10 @@ https://koenig-media.raywenderlich.com/uploads/2014/06/RW-Swift-Cheatsheet-0_8.p
 
 [NSHipster -- Swift documentation comment](https://nshipster.com/swift-documentation)
 
+# JSON Guide
+
+[Ultimate Guide to JSON Parsing with Swift 4](https://benscheirman.com/2017/06/swift-json/)
+
 # Herramientas para desarrollo
 
 - iOS development: 
