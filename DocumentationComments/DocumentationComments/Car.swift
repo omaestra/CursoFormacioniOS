@@ -60,6 +60,7 @@ class Car {
 }
 
 // MARK: - CustomStringConvertible
+
 extension Car: CustomStringConvertible {
     public var description: String {
         // FIXME: User a thousand separator formatter to print 1.991 as year.

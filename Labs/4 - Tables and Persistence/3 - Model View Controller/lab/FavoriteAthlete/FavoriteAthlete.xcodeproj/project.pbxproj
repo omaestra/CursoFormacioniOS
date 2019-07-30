@@ -63,7 +63,6 @@
 				CE5FCD2522EA3F3D00A2AF2B /* Model */,
 				A94375AD1E4648230053B419 /* AppDelegate.swift */,
 				A94375B11E4648230053B419 /* Main.storyboard */,
-				A9FE274E1E4A8F0E00F01A14 /* AthleteTableViewController.swift */,
 				A94375B41E4648230053B419 /* Assets.xcassets */,
 				A94375B61E4648230053B419 /* LaunchScreen.storyboard */,
 				A94375B91E4648230053B419 /* Info.plist */,
@@ -90,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5FCD2A22EA402400A2AF2B /* AthleteFormViewController.swift */,
+				A9FE274E1E4A8F0E00F01A14 /* AthleteTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

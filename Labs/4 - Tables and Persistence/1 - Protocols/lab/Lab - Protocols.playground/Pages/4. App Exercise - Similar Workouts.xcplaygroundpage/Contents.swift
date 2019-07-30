@@ -16,26 +16,21 @@ protocol Workout {
  Create two structs, `RunningWorkout` and `SwimmingWorkout`. Both should conform to the `Workout` protocol. Uncomment the function `simpleWorkoutDescription` below, create an instance of each of your structs, and call `simpleWorkoutDescription` twice, passing in a `RunningWorkout` object and then a `SwimmingWorkout` object.
  */
 struct RunningWorkout: Workout {
-    var distance: Double
-    
     var time: Double
-    
+    var distance: Double
     
 }
 
 struct SwimmingWorkout: Workout {
     var distance: Double
-    
-    var time: Double
-    
-    
+    var time: Double   
 }
 
 func simpleWorkoutDescription(workout: Workout) {
     print("You went \(workout.distance) meters in \(workout.time) seconds.")
 }
 
-let runningWorkout = RunningWorkout(distance: 40, time: 8)
+let runningWorkout = RunningWorkout(time: 8, distance: 40)
 let swimmingWorkout = SwimmingWorkout(distance: 10, time: 30)
 
 simpleWorkoutDescription(workout: runningWorkout)
