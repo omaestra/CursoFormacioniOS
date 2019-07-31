@@ -9,9 +9,9 @@ struct Note: Codable {
 
 let newNote = Note(title: "Grocery Run", text: "Pick up mayonnaise, mustard, lettuce, tomato and pickles", timestamp: Date())
 
-let propertyListEncoder = PropertyListEncoder()
+let propertyListEncoder = JSONEncoder()
 if let encodedNote = try? propertyListEncoder.encode(newNote) {
-    print(encodedNote)
+    print(String(data: encodedNote, encoding: .utf8))
     
     let propertyListDecoder = PropertyListDecoder()
     if let decodedNote = try? propertyListDecoder.decode(Note.self, from: encodedNote) {
