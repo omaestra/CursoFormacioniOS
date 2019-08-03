@@ -16,6 +16,8 @@
 		CE3A199D22F21D9700893D21 /* AddRegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A199C22F21D9700893D21 /* AddRegistrationTableViewController.swift */; };
 		CE3A19A122F2FB8300893D21 /* SelectRoomTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A19A022F2FB8200893D21 /* SelectRoomTypeTableViewController.swift */; };
 		CE5A08E422F3077000F59317 /* RegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A08E322F3077000F59317 /* RegistrationTableViewController.swift */; };
+		CE5A091922F45FDA00F59317 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A091822F45FDA00F59317 /* RegistrationController.swift */; };
+		CE5A091D22F465A200F59317 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A091C22F465A200F59317 /* Int+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CE3A199C22F21D9700893D21 /* AddRegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistrationTableViewController.swift; sourceTree = "<group>"; };
 		CE3A19A022F2FB8200893D21 /* SelectRoomTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomTypeTableViewController.swift; sourceTree = "<group>"; };
 		CE5A08E322F3077000F59317 /* RegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTableViewController.swift; sourceTree = "<group>"; };
+		CE5A091822F45FDA00F59317 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		CE5A091C22F465A200F59317 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,9 @@
 		CE3A198222F219AD00893D21 /* HotelCordoba */ = {
 			isa = PBXGroup;
 			children = (
-				CE3A199722F219C800893D21 /* Controllers */,
+				CE5A091A22F4658F00F59317 /* Helpers */,
+				CE5A091722F45FB100F59317 /* Model Controllers */,
+				CE3A199722F219C800893D21 /* View Controllers */,
 				CE3A199622F219C400893D21 /* Views */,
 				CE3A199522F219BE00893D21 /* Models */,
 				CE3A198322F219AD00893D21 /* AppDelegate.swift */,
@@ -90,14 +96,38 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CE3A199722F219C800893D21 /* Controllers */ = {
+		CE3A199722F219C800893D21 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				CE3A199C22F21D9700893D21 /* AddRegistrationTableViewController.swift */,
 				CE3A19A022F2FB8200893D21 /* SelectRoomTypeTableViewController.swift */,
 				CE5A08E322F3077000F59317 /* RegistrationTableViewController.swift */,
 			);
-			path = Controllers;
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CE5A091722F45FB100F59317 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE5A091822F45FDA00F59317 /* RegistrationController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		CE5A091A22F4658F00F59317 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE5A091B22F4659400F59317 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CE5A091B22F4659400F59317 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE5A091C22F465A200F59317 /* Int+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +201,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5A091922F45FDA00F59317 /* RegistrationController.swift in Sources */,
 				CE3A199922F219F200893D21 /* Registration.swift in Sources */,
 				CE3A198422F219AD00893D21 /* AppDelegate.swift in Sources */,
+				CE5A091D22F465A200F59317 /* Int+.swift in Sources */,
 				CE3A199D22F21D9700893D21 /* AddRegistrationTableViewController.swift in Sources */,
 				CE3A199B22F21A3D00893D21 /* RoomType.swift in Sources */,
 				CE5A08E422F3077000F59317 /* RegistrationTableViewController.swift in Sources */,

@@ -79,6 +79,13 @@ class AddRegistrationTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
+        
+        [firstNameTextField, lastNameTextField, emailTextField].forEach({
+            
+            $0?.addTarget(self, action: #selector(textFieldValueDidChange(_:)), for: .editingChanged)
+        })
 
         let midnightToday = Calendar.current.startOfDay(for: Date())
         checkInDatePicker.minimumDate = midnightToday
@@ -94,9 +101,14 @@ class AddRegistrationTableViewController: UITableViewController {
         updateRoomType()
     }
     
+    @IBAction func textFieldValueDidChange(_ textField: UITextField) {
+        print("\(textField.text ?? "")")
+    }
+    
     func updateDateViews() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
+//        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         
         checkInDateLabel.text = dateFormatter.string(from: checkInDatePicker.date)
         checkOutDateLabel.text = dateFormatter.string(from: checkOutDatePicker.date)
@@ -131,7 +143,11 @@ class AddRegistrationTableViewController: UITableViewController {
     }
     
     @IBAction func handleCancel(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        if registration != nil {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: - Table view delegate
@@ -205,6 +221,7 @@ extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tapGesture = UITapGestureRecognizer(target: self,
                                                 action: #selector(hideKeyboard))
+        tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
     }
     

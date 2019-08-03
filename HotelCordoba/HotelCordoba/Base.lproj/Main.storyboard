@@ -317,18 +317,18 @@
                                         <rect key="frame" x="0.0" y="993" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BEw-6A-3Hh" id="R6X-FZ-YKK">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MyL-rO-L7D">
-                                                    <rect key="frame" x="20" y="15" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Not set" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3ed-Oa-Mms">
-                                                    <rect key="frame" x="320" y="15" width="56" height="20.5"/>
+                                                    <rect key="frame" x="323" y="15" width="56" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -346,11 +346,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="mNT-Q6-MDo">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Dp0-1w-jRl">
-                            <connections>
-                                <action selector="handleCancel:" destination="XSj-ka-MhR" id="cnL-Us-dZN"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="yd8-0m-R9K">
                             <connections>
                                 <segue destination="nXo-B6-lbw" kind="unwind" unwindAction="unwindToRegistrationTableViewController:" id="Xcn-LD-6ji"/>
@@ -455,7 +450,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Kto-8F-VuE" kind="show" id="NyI-pm-xyU"/>
+                                    <segue destination="XSj-ka-MhR" kind="show" id="pVt-lB-ToY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -510,6 +505,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cFc-12-QJC"/>
+        <segue reference="pVt-lB-ToY"/>
     </inferredMetricsTieBreakers>
 </document>

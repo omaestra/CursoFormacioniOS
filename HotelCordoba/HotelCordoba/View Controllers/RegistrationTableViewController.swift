@@ -10,16 +10,16 @@ import UIKit
 
 class RegistrationTableViewController: UITableViewController {
     
+    var modelController = RegistrationController()
+    
     var registrations: [Registration] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if let registrations = modelController.loadRegistrationsFromFile() {
+            self.registrations = registrations
+        }
     }
 
     // MARK: - Table view data source
@@ -82,20 +82,20 @@ class RegistrationTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
     
     @IBAction func unwindToRegistrationTableViewController(_ unwindSegue: UIStoryboardSegue) {
         guard let sourceViewController = unwindSegue.source as? AddRegistrationTableViewController, let registration = sourceViewController.registration else { return }
         
         registrations.append(registration)
+        
+        modelController.saveRegistrationsToFile(registrations)
+        
         tableView.reloadData()
     }
 
