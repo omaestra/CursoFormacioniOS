@@ -15,10 +15,6 @@
 		CE8E89C922F7890200E00155 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E89C822F7890200E00155 /* ToDoTableViewCell.swift */; };
 		CE8E89CB22F8065800E00155 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E89CA22F8065800E00155 /* ToDoListTableViewController.swift */; };
 		CE8E89CD22F8067200E00155 /* ToDoDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E89CC22F8067200E00155 /* ToDoDetailsTableViewController.swift */; };
-		CEBAA8F822F8320F0053CEF7 /* ListModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEBAA8F622F8320F0053CEF7 /* ListModel.xcdatamodeld */; };
-		CEBAA92222F8583A0053CEF7 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAA92122F8583A0053CEF7 /* Repository.swift */; };
-		CEBAA92422F858AF0053CEF7 /* TaskCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAA92322F858AF0053CEF7 /* TaskCoreDataRepository.swift */; };
-		CEBAA92622F859B20053CEF7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAA92522F859B20053CEF7 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +28,6 @@
 		CE8E89C822F7890200E00155 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		CE8E89CA22F8065800E00155 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
 		CE8E89CC22F8067200E00155 /* ToDoDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailsTableViewController.swift; sourceTree = "<group>"; };
-		CEBAA8F722F8320F0053CEF7 /* ListModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListModel.xcdatamodel; sourceTree = "<group>"; };
-		CEBAA92122F8583A0053CEF7 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		CEBAA92322F858AF0053CEF7 /* TaskCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCoreDataRepository.swift; sourceTree = "<group>"; };
-		CEBAA92522F859B20053CEF7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +60,6 @@
 		CE8E89B022F7887400E00155 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				CEBAA92022F858210053CEF7 /* Repository */,
 				CE8E89C522F7888400E00155 /* Controllers */,
 				CE8E89C422F7888100E00155 /* Views */,
 				CE8E89C322F7887C00E00155 /* Models */,
@@ -77,7 +68,6 @@
 				CE8E89B822F7887600E00155 /* Assets.xcassets */,
 				CE8E89BA22F7887600E00155 /* LaunchScreen.storyboard */,
 				CE8E89BD22F7887600E00155 /* Info.plist */,
-				CEBAA8F622F8320F0053CEF7 /* ListModel.xcdatamodeld */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -105,16 +95,6 @@
 				CE8E89CC22F8067200E00155 /* ToDoDetailsTableViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		CEBAA92022F858210053CEF7 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				CEBAA92122F8583A0053CEF7 /* Repository.swift */,
-				CEBAA92322F858AF0053CEF7 /* TaskCoreDataRepository.swift */,
-				CEBAA92522F859B20053CEF7 /* CoreDataManager.swift */,
-			);
-			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,13 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBAA92222F8583A0053CEF7 /* Repository.swift in Sources */,
 				CE8E89C722F788E200E00155 /* ToDo.swift in Sources */,
-				CEBAA8F822F8320F0053CEF7 /* ListModel.xcdatamodeld in Sources */,
 				CE8E89B222F7887400E00155 /* AppDelegate.swift in Sources */,
 				CE8E89C922F7890200E00155 /* ToDoTableViewCell.swift in Sources */,
-				CEBAA92422F858AF0053CEF7 /* TaskCoreDataRepository.swift in Sources */,
-				CEBAA92622F859B20053CEF7 /* CoreDataManager.swift in Sources */,
 				CE8E89CB22F8065800E00155 /* ToDoListTableViewController.swift in Sources */,
 				CE8E89CD22F8067200E00155 /* ToDoDetailsTableViewController.swift in Sources */,
 			);
@@ -396,19 +372,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		CEBAA8F622F8320F0053CEF7 /* ListModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CEBAA8F722F8320F0053CEF7 /* ListModel.xcdatamodel */,
-			);
-			currentVersion = CEBAA8F722F8320F0053CEF7 /* ListModel.xcdatamodel */;
-			path = ListModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CE8E89A622F7887400E00155 /* Project object */;
 }
