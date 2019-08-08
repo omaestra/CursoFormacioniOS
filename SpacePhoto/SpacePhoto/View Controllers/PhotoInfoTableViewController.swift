@@ -10,29 +10,43 @@ import UIKit
 
 class PhotoInfoTableViewController: UITableViewController {
     
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .gray)
+        return activityIndicator
+    }()
+    
     var photoInfoController = PhotoInfoController()
     
-    var photos: [PhotoInfo] = []
+    var photoInfoArray: [PhotoInfo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib: UINib = UINib(nibName: "PhotoInfoTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "photoInfoCell")
+//        let nib: UINib = UINib(nibName: "PhotoInfoTableViewCell", bundle: nil)
+//        tableView.register(nib, forCellReuseIdentifier: "photoInfoCell")
+        
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(PhotoInfoTableViewCell.nib, forCellReuseIdentifier: PhotoInfoTableViewCell.reuseIdentifier)
+        
+        tableView.tableFooterView = UIView()
+        tableView.backgroundView = activityIndicator
 
-        let queries: [String: String] = [
-            "api_key": "vgmntRvK9bQ1SNnn1n6z9ieib2FcdlHhSsOqmfTf",
-            "count": "50"
-        ]
-        photoInfoController.fetchPhotosInfo(queries: queries) { (photoInfo) in
-            if let photosInfo = photoInfo {
-                self.photos = photosInfo
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-        }
+//        let queries: [String: String] = [
+//            "api_key": "vgmntRvK9bQ1SNnn1n6z9ieib2FcdlHhSsOqmfTf"
+//        ]
+//        
+//        activityIndicator.startAnimating()
+//        photoInfoController.fetchMultiplePhotosInfo(queries: queries) { (photoInfoArray) in
+//            if let photoInfoArray = photoInfoArray {
+//                self.photoInfoArray = photoInfoArray
+//                
+//                DispatchQueue.main.async {
+//                    self.activityIndicator.stopAnimating()
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        }
     }
 
     // MARK: - Table view data source
@@ -44,12 +58,16 @@ class PhotoInfoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return photos.count
+        return photoInfoArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "photoInfoCell", for: indexPath) as! PhotoInfoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PhotoInfoTableViewCell.reuseIdentifier, for: indexPath) as! PhotoInfoTableViewCell
 
+        
+        let photoInfo = photoInfoArray[indexPath.row]
+        
+        cell.configure(for: photoInfo)
 
         return cell
     }

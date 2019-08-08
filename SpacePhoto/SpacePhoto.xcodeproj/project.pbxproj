@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2AA49222FBF610007550EF /* IdentifiableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA49122FBF610007550EF /* IdentifiableCell.swift */; };
+		CE2AA49422FC139D007550EF /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA49322FC139D007550EF /* UIImageView+.swift */; };
+		CE2AA49822FC32EC007550EF /* LaunchScreen2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2AA49722FC32EC007550EF /* LaunchScreen2.storyboard */; };
+		CE2AA49A22FC334C007550EF /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA49922FC334C007550EF /* LaunchScreenViewController.swift */; };
 		CE45E68922FAA49E00814F4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45E68822FAA49E00814F4B /* AppDelegate.swift */; };
 		CE45E68B22FAA49E00814F4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45E68A22FAA49E00814F4B /* ViewController.swift */; };
 		CE45E68E22FAA49E00814F4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE45E68C22FAA49E00814F4B /* Main.storyboard */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE2AA49122FBF610007550EF /* IdentifiableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableCell.swift; sourceTree = "<group>"; };
+		CE2AA49322FC139D007550EF /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		CE2AA49722FC32EC007550EF /* LaunchScreen2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen2.storyboard; sourceTree = "<group>"; };
+		CE2AA49922FC334C007550EF /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		CE45E68522FAA49E00814F4B /* SpacePhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpacePhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE45E68822FAA49E00814F4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE45E68A22FAA49E00814F4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +86,7 @@
 				CE45E68F22FAA49F00814F4B /* Assets.xcassets */,
 				CE45E69122FAA49F00814F4B /* LaunchScreen.storyboard */,
 				CE45E69422FAA49F00814F4B /* Info.plist */,
+				CE2AA49722FC32EC007550EF /* LaunchScreen2.storyboard */,
 			);
 			path = SpacePhoto;
 			sourceTree = "<group>";
@@ -105,6 +114,7 @@
 				CE45E68A22FAA49E00814F4B /* ViewController.swift */,
 				CE45E6A222FADFE600814F4B /* ViewController2.swift */,
 				CE45E6AA22FB011600814F4B /* PhotoInfoTableViewController.swift */,
+				CE2AA49922FC334C007550EF /* LaunchScreenViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -121,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				CE45E6A922FAE09A00814F4B /* Extensions */,
+				CE2AA49122FBF610007550EF /* IdentifiableCell.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -129,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				CE45E69C22FAA6A100814F4B /* URL+.swift */,
+				CE2AA49322FC139D007550EF /* UIImageView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE45E6AF22FB02EF00814F4B /* PhotoInfoTableViewCell.xib in Resources */,
+				CE2AA49822FC32EC007550EF /* LaunchScreen2.storyboard in Resources */,
 				CE45E69322FAA49F00814F4B /* LaunchScreen.storyboard in Resources */,
 				CE45E69022FAA49F00814F4B /* Assets.xcassets in Resources */,
 				CE45E68E22FAA49E00814F4B /* Main.storyboard in Resources */,
@@ -209,9 +222,12 @@
 				CE45E69B22FAA5D400814F4B /* PhotoInfo.swift in Sources */,
 				CE45E6AB22FB011600814F4B /* PhotoInfoTableViewController.swift in Sources */,
 				CE45E69F22FAA6B800814F4B /* PhotoInfoController.swift in Sources */,
+				CE2AA49422FC139D007550EF /* UIImageView+.swift in Sources */,
 				CE45E68B22FAA49E00814F4B /* ViewController.swift in Sources */,
 				CE45E68922FAA49E00814F4B /* AppDelegate.swift in Sources */,
 				CE45E69D22FAA6A100814F4B /* URL+.swift in Sources */,
+				CE2AA49222FBF610007550EF /* IdentifiableCell.swift in Sources */,
+				CE2AA49A22FC334C007550EF /* LaunchScreenViewController.swift in Sources */,
 				CE45E6A322FADFE600814F4B /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

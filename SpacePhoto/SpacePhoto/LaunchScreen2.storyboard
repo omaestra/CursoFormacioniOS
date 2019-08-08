@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uqs-sd-nlB">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="1h2-xl-A5g">
+            <objects>
+                <viewController id="uqs-sd-nlB" customClass="LaunchScreenViewController" customModule="SpacePhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cmZ-RF-jOP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nasa" translatesAutoresizingMaskIntoConstraints="NO" id="27T-vc-6hJ">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="Hyu-Z2-c4S"/>
+                                    <constraint firstAttribute="width" constant="240" id="jFU-o3-Xeo"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="27T-vc-6hJ" firstAttribute="centerX" secondItem="cmZ-RF-jOP" secondAttribute="centerX" id="ViI-xg-C4i"/>
+                            <constraint firstItem="27T-vc-6hJ" firstAttribute="centerY" secondItem="cmZ-RF-jOP" secondAttribute="centerY" id="WtE-RA-4Ee"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4ve-UZ-8OA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZUO-wW-tlD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-592" y="-141"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nasa" width="900" height="900"/>
+    </resources>
+</document>
