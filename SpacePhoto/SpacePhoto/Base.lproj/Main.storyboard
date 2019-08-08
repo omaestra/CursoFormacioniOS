@@ -14,11 +14,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t3w-pG-MaY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VDQ-Ei-PZb">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="VDQ-Ei-PZb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OCQ-YH-k7C">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Fan-4s-dED" kind="relationship" relationship="rootViewController" id="vww-NA-JmA"/>
                     </connections>
@@ -27,20 +30,20 @@
             </objects>
             <point key="canvasLocation" x="136.875" y="108.75"/>
         </scene>
-        <!--Photo Info Table View Controller-->
+        <!--NASA APOD-->
         <scene sceneID="LUR-43-YTc">
             <objects>
                 <tableViewController storyboardIdentifier="PhotoInfoTableViewController" id="Fan-4s-dED" customClass="PhotoInfoTableViewController" customModule="SpacePhoto" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nTf-c0-tyn">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nTf-c0-tyn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
                             <outlet property="dataSource" destination="Fan-4s-dED" id="VOE-XL-KGY"/>
                             <outlet property="delegate" destination="Fan-4s-dED" id="t9K-2h-SeY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="n2n-H5-JwE"/>
+                    <navigationItem key="navigationItem" title="NASA APOD" id="n2n-H5-JwE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYM-sh-v3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

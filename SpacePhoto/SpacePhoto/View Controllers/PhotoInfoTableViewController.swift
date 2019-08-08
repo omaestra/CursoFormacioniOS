@@ -15,9 +15,16 @@ class PhotoInfoTableViewController: UITableViewController {
         return activityIndicator
     }()
     
-    var photoInfoController = PhotoInfoController()
+    lazy var dataRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+//        refreshControl.tintColor = .white
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        return refreshControl
+    }()
     
-    var photoInfoArray: [PhotoInfo] = []
+    var photoInfoController: PhotoInfoController!
+    
+    var photoInfoArray: [PhotoInfo]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,22 +38,27 @@ class PhotoInfoTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         tableView.backgroundView = activityIndicator
-
-//        let queries: [String: String] = [
-//            "api_key": "vgmntRvK9bQ1SNnn1n6z9ieib2FcdlHhSsOqmfTf"
-//        ]
-//        
-//        activityIndicator.startAnimating()
-//        photoInfoController.fetchMultiplePhotosInfo(queries: queries) { (photoInfoArray) in
-//            if let photoInfoArray = photoInfoArray {
-//                self.photoInfoArray = photoInfoArray
-//                
-//                DispatchQueue.main.async {
-//                    self.activityIndicator.stopAnimating()
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
+        
+        tableView.refreshControl = dataRefreshControl
+    }
+    
+    @objc func refreshData(_ sender: UIRefreshControl) {
+        let queries: [String: String] = [
+            "api_key": "vgmntRvK9bQ1SNnn1n6z9ieib2FcdlHhSsOqmfTf"
+        ]
+        
+        activityIndicator.startAnimating()
+        photoInfoController?.fetchMultiplePhotosInfo(queries: queries) { (photoInfoArray) in
+            if let photoInfoArray = photoInfoArray {
+                self.photoInfoArray = photoInfoArray
+            }
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.dataRefreshControl.endRefreshing()
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -58,14 +70,14 @@ class PhotoInfoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return photoInfoArray.count
+        return photoInfoArray?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhotoInfoTableViewCell.reuseIdentifier, for: indexPath) as! PhotoInfoTableViewCell
 
         
-        let photoInfo = photoInfoArray[indexPath.row]
+        guard let photoInfo = photoInfoArray?[indexPath.row] else { return UITableViewCell() }
         
         cell.configure(for: photoInfo)
 

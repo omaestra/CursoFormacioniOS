@@ -38,16 +38,4 @@ class PhotoInfoTableViewCell: UITableViewCell, IdentifiableCell {
         self.photoInfoImageView.loadImage(fromURL: photoInfo.url.absoluteString)
     }
     
-    @IBAction func buttonTouchUpInside(_ sender: UIButton) {
-        likeButton.transform = CGAffineTransform.identity
-    }
-    
-    @IBAction func buttonTouchDown(_ sender: Any) {
-        likeButton.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
-        UIView.animate(withDuration: 3.3) {
-            self.likeButton.transform = CGAffineTransform.identity
-        }
-        
-    }
-    
 }
