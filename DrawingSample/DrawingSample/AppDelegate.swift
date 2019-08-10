@@ -1,13 +1,12 @@
 //
 //  AppDelegate.swift
-//  UserNotificationsSample
+//  DrawingSample
 //
-//  Created by omaestra on 09/08/2019.
+//  Created by omaestra on 08/08/2019.
 //  Copyright © 2019 omaestra. All rights reserved.
 //
 
 import UIKit
-import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,14 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            // Enable or disable features based on authorization.
-        }
-        
-        center.delegate = self
-        
+        // Override point for customization after application launch.
         return true
     }
 
@@ -50,32 +42,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-}
-
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        if response.notification.request.identifier == "cordobaNotification" {
-            print("Handle notifications for cordobaNotification")
-            
-            switch response.actionIdentifier {
-            case UNNotificationDismissActionIdentifier:
-                print("User dismissed the notification.")
-            case UNNotificationDefaultActionIdentifier:
-                print("Default action for notification.")
-            case "SNOOZE_ACTION":
-                print("Snooze action selected.")
-            case "DELETE_ACTION":
-                print("Delete action selected.")
-            default:
-                break
-            }
-        }
-
-        completionHandler()
-    }
 }
 

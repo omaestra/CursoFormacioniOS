@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3ec-RQ-ovI">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cards-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DrawingSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeY-T7-CNT" customClass="CardView" customModule="DrawingSample" customModuleProvider="target">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="999" constant="300" id="Q6i-RO-nKr"/>
+                                    <constraint firstAttribute="width" secondItem="QeY-T7-CNT" secondAttribute="height" id="zsi-SV-CDC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isFaceUp" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cardRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="icon" value="🕺"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Man Dancing"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYe-3d-NOt" customClass="CardView" customModule="DrawingSample" customModuleProvider="target">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="999" constant="300" id="NXl-rT-14l"/>
+                                    <constraint firstAttribute="width" secondItem="hYe-3d-NOt" secondAttribute="height" id="P00-wb-uQW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isFaceUp" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cardRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="icon" value="😄"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Sonrisa"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ho-jl-FOH" customClass="CardView" customModule="DrawingSample" customModuleProvider="target">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Ho-jl-FOH" secondAttribute="height" id="AX6-dy-knr"/>
+                                    <constraint firstAttribute="width" priority="999" constant="300" id="bt6-JU-dzx"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isFaceUp" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cardRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Manzana"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fWp-dH-ige" appends="YES" id="yDE-nk-9hH"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QeY-T7-CNT" firstAttribute="width" secondItem="QeY-T7-CNT" secondAttribute="height" id="56x-K0-sSK"/>
+                            <constraint firstItem="1Ho-jl-FOH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VBG-Qt-sKU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Ho-jl-FOH" secondAttribute="trailing" id="Zfy-Nn-QEC"/>
+                            <constraint firstItem="hYe-3d-NOt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZhC-uK-aSd"/>
+                            <constraint firstItem="QeY-T7-CNT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aEM-1L-eCt"/>
+                            <constraint firstItem="QeY-T7-CNT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dhr-r8-45A"/>
+                            <constraint firstItem="1Ho-jl-FOH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gjC-L4-6XU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1Ho-jl-FOH" secondAttribute="bottom" id="hsV-XR-qcz"/>
+                            <constraint firstItem="hYe-3d-NOt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iGq-Jo-KWL"/>
+                            <constraint firstItem="QeY-T7-CNT" firstAttribute="width" secondItem="QeY-T7-CNT" secondAttribute="height" id="mHt-uN-v0A"/>
+                            <constraint firstItem="hYe-3d-NOt" firstAttribute="width" secondItem="hYe-3d-NOt" secondAttribute="height" id="sIM-r3-hs4"/>
+                            <constraint firstItem="1Ho-jl-FOH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="svF-x7-8Pz"/>
+                            <constraint firstItem="1Ho-jl-FOH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xTC-jL-HBL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cards" id="VZZ-wd-bFi"/>
+                    <connections>
+                        <outletCollection property="cardViews" destination="1Ho-jl-FOH" collectionClass="NSMutableArray" id="oaO-PB-5OW"/>
+                        <outletCollection property="cardViews" destination="hYe-3d-NOt" collectionClass="NSMutableArray" id="oi6-nc-Mrt"/>
+                        <outletCollection property="cardViews" destination="QeY-T7-CNT" collectionClass="NSMutableArray" id="K1v-2K-r4Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fWp-dH-ige">
+                    <connections>
+                        <action selector="tapCard:" destination="BYZ-38-t0r" id="ZLK-nV-X9K"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="948" y="667"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZU9-nO-w10">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3ec-RQ-ovI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="sZ6-6Y-5Yw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vcr-fC-YfH">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Q5f-ka-J83"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FyB-fu-pYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.666666666666671" y="666.96428571428567"/>
+        </scene>
+    </scenes>
+</document>
