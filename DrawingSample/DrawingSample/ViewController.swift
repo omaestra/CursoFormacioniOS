@@ -15,7 +15,7 @@ class ViewController: UIViewController {
             cardViews.forEach({
                 let swipe = UISwipeGestureRecognizer(target: self, action: #selector(nextCard))
                 swipe.direction = [.left, .right]
-                //            swipe.numberOfTouchesRequired = 2
+                swipe.numberOfTouchesRequired = 2
                 $0.addGestureRecognizer(swipe)
                 
                 let pinchSelector = #selector($0.adjustCardViewScale(byHandlingGestureRecognizerBy:))
@@ -55,12 +55,20 @@ class ViewController: UIViewController {
     @objc func panCard(_ sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .changed:
+            
             let translationInView = sender.translation(in: self.view)
-            if translationInView.x < -200 {
+            let transform = CGAffineTransform(translationX: sender.translation(in: self.view).x, y: sender.translation(in: self.view).y)
+            
+            translationInView.applying
+            
+            let centerPoint = (sender.view!.center).applying(transform)
+            print(centerPoint)
+            
+            if centerPoint.x < 0 {
                 sender.view!.removeFromSuperview()
             }
             
-            sender.view!.transform = CGAffineTransform(translationX: sender.translation(in: self.view).x, y: sender.translation(in: self.view).y)
+            sender.view!.transform = transform
         case .ended:
             UIView.animate(withDuration: 0.3) {
                 sender.view!.transform = CGAffineTransform.identity

@@ -1,0 +1,63 @@
+
+/* Class = "UINavigationItem"; title = "Registrations"; ObjectID = "2Cy-ec-rpY"; */
+"2Cy-ec-rpY.title" = "Registrations";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "2YF-Vi-nYe"; */
+"2YF-Vi-nYe.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Wi-Fi (per day)"; ObjectID = "3TX-2L-eib"; */
+"3TX-2L-eib.text" = "Wi-Fi (per day)";
+
+/* Class = "UILabel"; text = "Not set"; ObjectID = "3ed-Oa-Mms"; */
+"3ed-Oa-Mms.text" = "Not set";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "AUP-iV-koh"; */
+"AUP-iV-koh.text" = "Detail";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "GIQ-1d-PbM"; */
+"GIQ-1d-PbM.text" = "Detail";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "KY3-rn-D4C"; */
+"KY3-rn-D4C.text" = "Title";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "MyL-rO-L7D"; */
+"MyL-rO-L7D.text" = "Title";
+
+/* Class = "UILabel"; text = "€10"; ObjectID = "Q5R-PB-zdh"; */
+"Q5R-PB-zdh.text" = "€10";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "Vhz-MI-ear"; */
+"Vhz-MI-ear.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Adults"; ObjectID = "d4S-iX-XJP"; */
+"d4S-iX-XJP.text" = "Adults";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "h2d-gm-raR"; */
+"h2d-gm-raR.text" = "2";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "iSe-Ba-QsK"; */
+"iSe-Ba-QsK.placeholder" = "Last Name";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "lOC-J1-sXR"; */
+"lOC-J1-sXR.placeholder" = "First Name";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "lyQ-L5-N4t"; */
+"lyQ-L5-N4t.text" = "0";
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "mNT-Q6-MDo"; */
+"mNT-Q6-MDo.title" = "Root View Controller";
+
+/* Class = "UILabel"; text = "Check-In"; ObjectID = "nhg-bV-V0o"; */
+"nhg-bV-V0o.text" = "Check-In";
+
+/* Class = "UILabel"; text = "Check-Out"; ObjectID = "oUb-Bf-jyQ"; */
+"oUb-Bf-jyQ.text" = "Check-Out";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "tpk-vs-hbT"; */
+"tpk-vs-hbT.text" = "Detail";
+
+/* Class = "UILabel"; text = "Children"; ObjectID = "ugF-fe-qYj"; */
+"ugF-fe-qYj.text" = "Children";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "xyc-mh-eVr"; */
+"xyc-mh-eVr.text" = "Title";
