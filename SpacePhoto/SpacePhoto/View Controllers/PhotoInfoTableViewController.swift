@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MBProgressHUD
+import Kingfisher
 
 class PhotoInfoTableViewController: UITableViewController {
     
@@ -21,8 +23,9 @@ class PhotoInfoTableViewController: UITableViewController {
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         return refreshControl
     }()
-    
-    var photoInfoController: PhotoInfoController!
+
+    var photoInfoController: PhotoInfoController = PhotoInfoController()
+//    var photoInfoController: PhotoInfoController!
     
     var photoInfoArray: [PhotoInfo]?
 
@@ -40,23 +43,43 @@ class PhotoInfoTableViewController: UITableViewController {
         tableView.backgroundView = activityIndicator
         
         tableView.refreshControl = dataRefreshControl
+        
+        fetchPhotosInfoData()
+    }
+    
+    private func showLoadingHUD() {
+        let hud = MBProgressHUD.showAdded(to: self.tableView, animated: true)
+        hud.label.text = "Loading..."
+    }
+    
+    private func hideLoadingHUD() {
+        MBProgressHUD.hide(for: self.tableView, animated: true)
     }
     
     @objc func refreshData(_ sender: UIRefreshControl) {
+        fetchPhotosInfoData()
+    }
+    
+    fileprivate func fetchPhotosInfoData() {
         let queries: [String: String] = [
             "api_key": "vgmntRvK9bQ1SNnn1n6z9ieib2FcdlHhSsOqmfTf"
         ]
         
-        activityIndicator.startAnimating()
-        photoInfoController?.fetchMultiplePhotosInfo(queries: queries) { (photoInfoArray) in
+        //        activityIndicator.startAnimating()
+        showLoadingHUD()
+        photoInfoController.fetchPhotosInfoUsingAlamofire(queries: queries) { [weak self] (photoInfoArray) in
+            
+            guard let strongSelf = self else { return }
+            
             if let photoInfoArray = photoInfoArray {
-                self.photoInfoArray = photoInfoArray
+                strongSelf.photoInfoArray = photoInfoArray
             }
             
             DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-                self.dataRefreshControl.endRefreshing()
-                self.tableView.reloadData()
+                //                self.activityIndicator.stopAnimating()
+                strongSelf.hideLoadingHUD()
+                strongSelf.dataRefreshControl.endRefreshing()
+                strongSelf.tableView.reloadData()
             }
         }
     }
@@ -79,7 +102,9 @@ class PhotoInfoTableViewController: UITableViewController {
         
         guard let photoInfo = photoInfoArray?[indexPath.row] else { return UITableViewCell() }
         
-        cell.configure(for: photoInfo)
+        cell.titleLabel.text = photoInfo.title
+        cell.descriptionLabel.text = photoInfo.description
+        cell.photoInfoImageView.kf.setImage(with: photoInfo.url)
 
         return cell
     }

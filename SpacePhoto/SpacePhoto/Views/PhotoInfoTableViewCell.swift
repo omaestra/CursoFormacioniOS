@@ -14,11 +14,9 @@ class PhotoInfoTableViewCell: UITableViewCell, IdentifiableCell {
     @IBOutlet weak var photoInfoImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func prepareForReuse() {
@@ -32,10 +30,10 @@ class PhotoInfoTableViewCell: UITableViewCell, IdentifiableCell {
         // Configure the view for the selected state
     }
     
-    func configure(for photoInfo: PhotoInfo) {
-        self.titleLabel.text = photoInfo.title
-        self.descriptionLabel.text = photoInfo.description
-        self.photoInfoImageView.loadImage(fromURL: photoInfo.url.absoluteString)
-    }
+//    func configure(for photoInfo: PhotoInfo) {
+//        self.titleLabel.text = photoInfo.title
+//        self.descriptionLabel.text = photoInfo.description
+//        self.photoInfoImageView.loadImage(fromURL: photoInfo.url.absoluteString)
+//    }
     
 }

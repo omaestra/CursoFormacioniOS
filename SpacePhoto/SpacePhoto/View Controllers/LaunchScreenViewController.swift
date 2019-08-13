@@ -15,7 +15,8 @@ class LaunchScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchDataAndNavigate()
+//        fetchDataAndNavigate()
+        navigateToMain()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,12 +27,30 @@ class LaunchScreenViewController: UIViewController {
         return .lightContent
     }
     
+    func navigateToMain() {
+        let mainNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
+        
+        let window = (UIApplication.shared.delegate as! AppDelegate).window
+        
+        UIView.animate(withDuration: 0.5, delay: 1.5, options: [.transitionCrossDissolve], animations: {
+            window?.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        }, completion: { (_) in
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseOut], animations: {
+                window?.rootViewController!.view.transform = CGAffineTransform.identity
+            }, completion: { (_) in
+                window?.rootViewController = mainNavigationController
+                window?.rootViewController?.navigationController?.navigationController?.navigationBar.prefersLargeTitles = true
+                window?.makeKeyAndVisible()
+            })
+        })
+    }
+    
     func fetchDataAndNavigate() {
         let queries: [String: String] = [
             "api_key": "vgmntRvK9bQ1SNnn1n6z9ieib2FcdlHhSsOqmfTf"
         ]
         
-        photoInfoController.fetchMultiplePhotosInfo(queries: queries) { (photoInfoArray) in
+        photoInfoController.fetchPhotosInfoUsingAlamofire(queries: queries) { (photoInfoArray) in
             DispatchQueue.main.async {
                 let mainNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
                 
