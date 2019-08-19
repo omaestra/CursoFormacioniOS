@@ -2,47 +2,67 @@
 //  CharactersTableViewController.swift
 //  RickAndMorty
 //
-//  Created by omaestra on 13/08/2019.
+//  Created by Usuario on 14/08/2019.
 //  Copyright © 2019 omaestra. All rights reserved.
 //
 
 import UIKit
 
 class CharactersTableViewController: UITableViewController {
-    
-    var characters: [Character] = []
 
+    let modelController = CharacterController()
+    var characters: [Character] = []
+    var pagedData: PagedData<Character>?
+    
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        return activityIndicator
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        loadCharacters { (characters) in
-            if let characters = characters {
-                self.characters = characters
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+        self.tableView.tableFooterView = activityIndicator
+
+        self.refreshControl?.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        loadCharacters()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func refreshData(_ sender: UIRefreshControl) {
+        loadCharacters()
+    }
+    
+    private func loadCharacters() {
+        activityIndicator.startAnimating()
+        modelController.loadCharacters(url: self.pagedData?.info.next) { (pagedData) in
+            if let characters = pagedData?.results {
+                for character in characters {
+                    if !self.characters.contains(where: { character == $0 }) {
+                        self.characters.append(character)
+                    }
                 }
+                self.pagedData = pagedData
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+                self.activityIndicator.stopAnimating()
             }
         }
     }
     
-    func loadCharacters(completion: @escaping ([Character]?) -> Void) {
-        let baseURL = URL(string: "https://rickandmortyapi.com/api/character/")!
-        
-        let jsonDecoder = JSONDecoder()
-        URLSession.shared.dataTask(with: baseURL) { (data, response, error) in
-            if let data = data,
-                let pagedCharacters = try? jsonDecoder.decode(PagedData<Character>.self, from: data) {
-                completion(pagedCharacters.results)
-            } else {
-                completion(nil)
-            }
-        }.resume()
+    private func fetchNextPage() {
+        loadCharacters()
+    }
+    
+    private func isLoading(at indexPath: IndexPath) -> Bool {
+        return indexPath.row == self.characters.count-1
     }
 
     // MARK: - Table view data source
@@ -54,15 +74,32 @@ class CharactersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return characters.count
+        return self.characters.count
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        guard isLoading(at: indexPath) else { return }
+        
+        self.fetchNextPage()
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as! CharacterTableViewCell
 
         let character = characters[indexPath.row]
-        cell.textLabel?.text = character.name
+        
+        cell.nameLabel.text = character.name
+        cell.characterImageView.loadImage(fromURL: character.image)
+        cell.speciesLabel.text = "\(character.species)"
+        
+        if character.type != "" {
+            cell.speciesLabel.text?.append(" - \(character.type)")
+        }
+        
+        cell.genderLabel.text = character.gender
+        cell.statusLabel.text = character.status.rawValue
+        cell.statusLabel.textColor = character.status.color
 
         return cell
     }
@@ -77,7 +114,7 @@ class CharactersTableViewController: UITableViewController {
 
     /*
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -102,14 +139,17 @@ class CharactersTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showCharacter" {
+            let destination = segue.destination as! CharacterDetailsTableViewController
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                destination.character = characters[indexPath.row]
+            }
+        }
     }
-    */
 
 }

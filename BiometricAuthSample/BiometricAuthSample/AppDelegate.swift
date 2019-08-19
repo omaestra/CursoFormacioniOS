@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  RickAndMorty
+//  BiometricAuthSample
 //
-//  Created by Usuario on 14/08/2019.
+//  Created by omaestra on 18/08/2019.
 //  Copyright © 2019 omaestra. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
