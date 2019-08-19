@@ -73,6 +73,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="We2-2N-G0Y" kind="presentation" id="k7D-Yr-Cdk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -159,7 +162,7 @@
                                                     <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                     <connections>
                                                         <action selector="textFieldChanged:" destination="Aye-MZ-Ugq" eventType="editingDidEnd" id="qgI-wV-oy0"/>
                                                     </connections>
@@ -255,4 +258,7 @@
             <point key="canvasLocation" x="1886" y="730"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="k7D-Yr-Cdk"/>
+    </inferredMetricsTieBreakers>
 </document>

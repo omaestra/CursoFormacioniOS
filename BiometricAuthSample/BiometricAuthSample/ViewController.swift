@@ -23,9 +23,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func touchIdAction(_ sender: UIButton) {
-        
         let myContext = LAContext()
         let myLocalizedReasonString = "Biometric Authentication Test"
         
@@ -49,11 +47,8 @@ class ViewController: UIViewController {
             }
         } else {
             // Fallback on earlier versions
-            
             successLabel.text = "Feature not supported."
         }
-        
-        
     }
 
 }

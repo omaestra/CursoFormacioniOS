@@ -42,7 +42,7 @@ class CharactersTableViewController: UITableViewController {
         modelController.loadCharacters(url: self.pagedData?.info.next) { (pagedData) in
             if let characters = pagedData?.results {
                 for character in characters {
-                    if !self.characters.contains(where: { character == $0 }) {
+                    if !self.characters.contains(character) {
                         self.characters.append(character)
                     }
                 }

@@ -161,9 +161,16 @@ struct KeychainPasswordItem {
     // MARK: Convenience
     
     private static func keychainQuery(withService service: String, account: String? = nil, accessGroup: String? = nil) -> [String : AnyObject] {
+        
+        let access = SecAccessControlCreateWithFlags(nil, // Use the default allocator.
+            kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
+            .userPresence,
+            nil)
+        
         var query = [String : AnyObject]()
         query[kSecClass as String] = kSecClassGenericPassword
         query[kSecAttrService as String] = service as AnyObject?
+        query[kSecAttrAccessControl as String] = access as AnyObject
         
         if let account = account {
             query[kSecAttrAccount as String] = account as AnyObject?
