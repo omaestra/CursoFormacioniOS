@@ -16,6 +16,7 @@
 		CE9B70B42309AF170078E5D2 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B70B32309AF170078E5D2 /* KeychainConfiguration.swift */; };
 		CE9B70B62309B1140078E5D2 /* AccountDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B70B52309B1140078E5D2 /* AccountDetailsTableViewController.swift */; };
 		CE9B70B82309B17A0078E5D2 /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B70B72309B17A0078E5D2 /* AccountsTableViewController.swift */; };
+		CE9B70BB230ACB3E0078E5D2 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9B70BA230ACB3E0078E5D2 /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CE9B70B32309AF170078E5D2 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
 		CE9B70B52309B1140078E5D2 /* AccountDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsTableViewController.swift; sourceTree = "<group>"; };
 		CE9B70B72309B17A0078E5D2 /* AccountsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewController.swift; sourceTree = "<group>"; };
+		CE9B70BA230ACB3E0078E5D2 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9B70BB230ACB3E0078E5D2 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +51,7 @@
 			children = (
 				CE9B709E2309ACA80078E5D2 /* BiometricAuthSample */,
 				CE9B709D2309ACA80078E5D2 /* Products */,
+				CE9B70B9230ACB3E0078E5D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +78,14 @@
 				CE9B70B72309B17A0078E5D2 /* AccountsTableViewController.swift */,
 			);
 			path = BiometricAuthSample;
+			sourceTree = "<group>";
+		};
+		CE9B70B9230ACB3E0078E5D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B70BA230ACB3E0078E5D2 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

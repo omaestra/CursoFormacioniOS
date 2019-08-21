@@ -14,4 +14,9 @@ struct Episode: Codable {
     var airDate: String
     var episode: String
     var created: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case id, name, episode, created
+        case airDate = "air_date"
+    }
 }

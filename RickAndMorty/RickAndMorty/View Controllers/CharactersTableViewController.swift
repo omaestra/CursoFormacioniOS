@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class CharactersTableViewController: UITableViewController {
 
@@ -26,6 +28,12 @@ class CharactersTableViewController: UITableViewController {
 
         self.refreshControl?.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         loadCharacters()
+        
+//        let db = Database.database().reference()
+//        let usersRef = rootRef.child("users")
+//        let userRef = usersRef.child((Auth.auth().currentUser?.uid)!)
+//
+//        userRef.setValue(["username": "omaestra", "age": 28])
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +73,21 @@ class CharactersTableViewController: UITableViewController {
         return indexPath.row == self.characters.count-1
     }
 
+    // MARK: - Actions
+    
+    @IBAction func handleLogOut(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let loginController = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()
+            appDelegate.window?.rootViewController = loginController
+            appDelegate.window?.makeKeyAndVisible()
+        } catch {
+            print("[ERROR]: Couldn't log out user.")
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

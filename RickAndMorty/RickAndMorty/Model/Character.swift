@@ -15,7 +15,6 @@ struct Character: Codable, Equatable {
         return lhs.id == rhs.id
     }
     
-    
     enum Status: String, Codable {
         case alive = "Alive"
         case dead = "Dead"

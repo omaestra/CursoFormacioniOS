@@ -10,7 +10,14 @@ import UIKit
 
 class EpisodesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    lazy var cancelButton: UIBarButtonItem = {
+        let buttonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel(_:)))
+        return buttonItem
+    }()
+    
     var episodes: [Episode]?
+    var episodesIds: [String]?
+    let episodeController = EpisodeController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +25,28 @@ class EpisodesCollectionViewController: UICollectionViewController, UICollection
         // Register cell classes
         self.collectionView?.register(EpisodeCollectionViewCell.nib, forCellWithReuseIdentifier: EpisodeCollectionViewCell.reuseIdentifier)
 
-        // Do any additional setup after loading the view.
+        if let episodesIds = self.episodesIds {
+            
+            self.navigationItem.leftBarButtonItem = cancelButton
+            
+            episodeController.loadMultipleEpisodes(withIds: episodesIds) { [weak self] (episodes) in
+                self?.episodes = episodes
+                
+                DispatchQueue.main.async {
+                    self?.collectionView?.reloadData()
+                }
+            }
+        } else {
+            episodeController.loadEpisodes { [weak self] (pagedData) in
+                if let pagedData = pagedData {
+                    self?.episodes = pagedData.results
+                }
+                
+                DispatchQueue.main.async {
+                    self?.collectionView?.reloadData()
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +54,9 @@ class EpisodesCollectionViewController: UICollectionViewController, UICollection
         // Dispose of any resources that can be recreated.
     }
 
+    @objc func handleCancel(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
@@ -56,10 +87,18 @@ class EpisodesCollectionViewController: UICollectionViewController, UICollection
         let episode = episodes?[indexPath.row]
         
         cell.episodeLabel.text = episode?.episode
-    
-        
+        cell.episodeNameLabel.text = episode?.name
+        cell.episodeAirDateLabel.text = episode?.airDate
     
         return cell
+    }
+    
+    // MARK: UICollectionViewFlowLayoutDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = collectionView.bounds.size
+        
+        return CGSize(width: size.width/2-10, height: size.width/2-10)
     }
 
     // MARK: UICollectionViewDelegate
