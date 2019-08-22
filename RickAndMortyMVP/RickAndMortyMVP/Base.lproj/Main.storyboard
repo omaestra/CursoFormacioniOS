@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UTe-VW-4Zf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Characters-->
+        <scene sceneID="rUn-QQ-mNf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Characters" id="7ep-B7-LPE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Characters" image="characters_filled" selectedImage="characters_filled" id="ztR-3x-AeS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JY1-cV-Lcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="-27"/>
+        </scene>
+        <!--Episodes-->
+        <scene sceneID="eT0-Ez-D7G">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Episodes" id="EQ7-PZ-ewf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Episodes" image="episodes" selectedImage="episodes_filled" id="OGv-qb-vbQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wI3-gU-W2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="122"/>
+        </scene>
+        <!--Locations-->
+        <scene sceneID="6ok-SJ-CSH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Locations" id="wZK-0p-Sug" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="xGy-aw-eks"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jx-rP-Enm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="273"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="XUo-Z2-DIF">
+            <objects>
+                <tabBarController id="UTe-VW-4Zf" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LT5-lJ-53a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7ep-B7-LPE" kind="relationship" relationship="viewControllers" id="KWe-7I-lqq"/>
+                        <segue destination="EQ7-PZ-ewf" kind="relationship" relationship="viewControllers" id="dac-pf-kXT"/>
+                        <segue destination="wZK-0p-Sug" kind="relationship" relationship="viewControllers" id="b7C-gq-lgC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XdG-Rg-BPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-884" y="123"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="characters_filled" width="25" height="25"/>
+        <image name="episodes" width="32" height="32"/>
+        <image name="episodes_filled" width="32" height="32"/>
+    </resources>
+</document>
