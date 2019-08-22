@@ -23,7 +23,20 @@ https://google.github.io/swift/
 ## Raywenderlich Swift Style Guide
 https://github.com/raywenderlich/swift-style-guide
 
+## Design Patterns
+https://github.com/ochococo/Design-Patterns-In-Swift
+https://medium.com/cocoaacademymag/real-world-ios-design-patterns-3e5aad172094
+
 ## 
+
+# Security:
+https://www.apple.com/business/docs/site/iOS_Security_Guide.pdf
+
+https://medium.com/@kavithakumarasamy89/ios-mobile-app-security-part-i-best-practices-for-ios-mobile-developers-1220748b1f3
+https://medium.com/swift2go/application-security-musts-for-every-ios-app-dabf095b9c4f
+https://hackernoon.com/mobile-api-security-techniques-682a5da4fe10
+
+
 
 # Libros:
 ## 1) “App Development with Swift” by Apple Education ###
