@@ -33,12 +33,14 @@ https://medium.com/@ogulcan/best-practice-for-ios-login-logout-with-animation-wi
 ## 
 
 # Security:
-https://www.apple.com/business/docs/site/iOS_Security_Guide.pdf
+- https://www.apple.com/business/docs/site/iOS_Security_Guide.pdf
 
-https://medium.com/@kavithakumarasamy89/ios-mobile-app-security-part-i-best-practices-for-ios-mobile-developers-1220748b1f3
-https://medium.com/swift2go/application-security-musts-for-every-ios-app-dabf095b9c4f
-https://hackernoon.com/mobile-api-security-techniques-682a5da4fe10
-https://medium.com/@ankurvekariya/ios-app-security-tips-and-tricks-42cdf9301181
+- https://medium.com/@kavithakumarasamy89/ios-mobile-app-security-part-i-best-practices-for-ios-mobile-developers-1220748b1f3
+- https://medium.com/swift2go/application-security-musts-for-every-ios-app-dabf095b9c4f
+- https://hackernoon.com/mobile-api-security-techniques-682a5da4fe10
+- https://medium.com/@ankurvekariya/ios-app-security-tips-and-tricks-42cdf9301181
+- https://www.raywenderlich.com/2666-ios-app-security-and-analysis-part-1-2
+- https://github.com/felixgr/secure-ios-app-dev
 
 # Firebase:
 
