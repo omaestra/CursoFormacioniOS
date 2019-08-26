@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_RickAndMortyVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_RickAndMortyVersionString[];
+FOUNDATION_EXPORT double Pods_RickAndMortyMVPVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_RickAndMortyMVPVersionString[];
 

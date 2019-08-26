@@ -1,14 +1,14 @@
 //
-//  EpisodeController.swift
-//  RickAndMorty
+//  EpisodeService.swift
+//  RickAndMortyMVP
 //
-//  Created by omaestra on 21/08/2019.
+//  Created by omaestra on 26/08/2019.
 //  Copyright © 2019 omaestra. All rights reserved.
 //
 
 import Foundation
 
-class EpisodeController {
+class EpisodeService {
     func loadEpisodes(url: String? = nil, completion: @escaping (_ pagedData: PagedData<Episode>?) -> Void) {
         
         var baseURL = URL(string: "https://rickandmortyapi.com/api/episode/")!

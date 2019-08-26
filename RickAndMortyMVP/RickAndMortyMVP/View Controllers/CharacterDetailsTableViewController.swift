@@ -15,6 +15,7 @@ class CharacterDetailsTableViewController: UITableViewController {
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var originLabel: UILabel!
     @IBOutlet weak var lastLocationLabel: UILabel!
     
     var character: Character!
@@ -37,6 +38,17 @@ class CharacterDetailsTableViewController: UITableViewController {
         genderLabel.text = character.gender
         statusLabel.text = character.status.rawValue
         statusLabel.textColor = character.status.color
+        originLabel.text = character.origin["name"]
+        lastLocationLabel.text = character.location["name"]
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath == [0, 0] {
+            return UITableViewAutomaticDimension
+        } else {
+            return super.tableView(tableView, heightForRowAt: indexPath)
+        }
     }
     
     // MARK: - Navigation
@@ -44,7 +56,7 @@ class CharacterDetailsTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCharacterEpisodes" {
-            let destination = (segue.destination as! UINavigationController).topViewController as! EpisodesCollectionViewController
+            let destination = (segue.destination as! UINavigationController).topViewController as! EpisodesTableViewController
             destination.episodesIds = character.episode.map({ ($0 as NSString).lastPathComponent })
         }
     }

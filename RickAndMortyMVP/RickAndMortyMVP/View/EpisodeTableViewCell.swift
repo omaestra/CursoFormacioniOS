@@ -1,24 +1,22 @@
 //
-//  LocationsTableViewCell.swift
-//  RickAndMorty
+//  EpisodeTableViewCell.swift
+//  RickAndMortyMVP
 //
-//  Created by Usuario on 14/08/2019.
+//  Created by omaestra on 26/08/2019.
 //  Copyright © 2019 omaestra. All rights reserved.
 //
 
 import UIKit
 
-class LocationsTableViewCell: UITableViewCell, IdentifiableCell {
+class EpisodeTableViewCell: UITableViewCell, IdentifiableCell {
 
-    @IBOutlet weak var locationTypeImageView: UIImageView!
-    @IBOutlet weak var dimensionLabel: UILabel!
+    @IBOutlet weak var episodeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var airDateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,5 +24,5 @@ class LocationsTableViewCell: UITableViewCell, IdentifiableCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

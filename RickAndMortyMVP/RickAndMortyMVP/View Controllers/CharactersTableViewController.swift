@@ -56,7 +56,7 @@ class CharactersTableViewController: UITableViewController {
         do {
             try Auth.auth().signOut()
             
-            self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
+            self.performSegue(withIdentifier: "unwindToMainViewController", sender: nil)
 //            let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //            let loginController = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()
 //            appDelegate.window?.rootViewController = loginController

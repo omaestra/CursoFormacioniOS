@@ -30,13 +30,13 @@
         <!--Locations-->
         <scene sceneID="OeK-i9-HIT">
             <objects>
-                <tableViewController id="AjT-Rz-92M" customClass="LocationsTableViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="AjT-Rz-92M" customClass="LocationsTableViewController" customModule="RickAndMortyMVP" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sFZ-XZ-NzU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="z2T-zl-LLd">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" id="z2T-zl-LLd">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z2T-zl-LLd" id="dPT-hf-ZKL">
@@ -53,7 +53,7 @@
                     <tabBarItem key="tabBarItem" title="Locations" image="location" selectedImage="location_filled" id="hRw-Jj-hWL"/>
                     <navigationItem key="navigationItem" title="Locations" id="R5z-k1-Xvd"/>
                     <connections>
-                        <segue destination="aam-QZ-qhe" kind="show" id="jKx-6D-hfE"/>
+                        <segue destination="aam-QZ-qhe" kind="show" identifier="showLocationDetails" id="jKx-6D-hfE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfW-0P-JDS" userLabel="First Responder" sceneMemberID="firstResponder"/>

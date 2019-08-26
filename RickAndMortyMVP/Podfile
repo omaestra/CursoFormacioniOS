@@ -1,13 +1,24 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
-target 'RickAndMorty' do
+def sharedPods
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
+    pod 'Firebase/Database'
+end
+
+target 'RickAndMortyMVP' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for RickAndMorty
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Database'
+  # Pods for RickAndMortyMVP
+  sharedPods
+end
+
+target 'RickAndMortyMVP_Debug' do
+    use_frameworks!
+    
+    # Pods for RickAndMortyMVP_Debug
+    sharedPods
 end

@@ -39,6 +39,7 @@ struct Character: Codable, Equatable {
     var type: String
     var image: String
     var gender: String
+    var origin: [String: String]
     var location: [String: String]
     var episode: [String]
 }

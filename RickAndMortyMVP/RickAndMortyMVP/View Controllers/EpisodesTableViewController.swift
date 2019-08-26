@@ -1,35 +1,48 @@
 //
-//  LocationsTableViewController.swift
-//  RickAndMorty
+//  EpisodesTableViewController.swift
+//  RickAndMortyMVP
 //
-//  Created by omaestra on 16/08/2019.
+//  Created by omaestra on 26/08/2019.
 //  Copyright © 2019 omaestra. All rights reserved.
 //
 
 import UIKit
 
-class LocationsTableViewController: UITableViewController {
-    
-    var locations: [Location]?
-    var pagedData: PagedData<Location>?
-    var presenter = LocationPresenter(service: LocationService())
+class EpisodesTableViewController: UITableViewController {
 
+    lazy var cancelButton: UIBarButtonItem = {
+        let buttonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel(_:)))
+        return buttonItem
+    }()
+    
+    var episodes: [Episode]?
+    var episodesIds: [String]?
+    var presenter: EpisodePresenter = EpisodePresenter(service: EpisodeService())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel(_:)))
         
-        tableView.register(LocationsTableViewCell.nib, forCellReuseIdentifier: LocationsTableViewCell.reuseIdentifier)
         tableView.tableFooterView = UIView()
         
-        // Bind presenter.
+        // Bind presenter
         presenter.setViewDelegate(delegate: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter.loadLocations()
+        if let episodesIds = self.episodesIds {
+            self.navigationItem.leftBarButtonItem = cancelButton
+            
+            presenter.loadMultipleEpisodes(idsArray: episodesIds)
+        } else {
+            presenter.loadEpisodes()
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     @objc func handleCancel(_ sender: UIBarButtonItem) {
@@ -43,18 +56,18 @@ class LocationsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return locations?.count ?? 0
+        return episodes?.count ?? 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LocationsTableViewCell.reuseIdentifier, for: indexPath) as! LocationsTableViewCell
-
-        let location = locations?[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: EpisodeTableViewCell.reuseIdentifier, for: indexPath) as! EpisodeTableViewCell
         
-        cell.nameLabel.text = location?.name
-        cell.dimensionLabel.text = location?.dimension
-        cell.typeLabel.text = location?.type
-
+        let episode = episodes?[indexPath.row]
+        
+        cell.episodeLabel.text = episode?.episode
+        cell.nameLabel.text = episode?.name
+        cell.airDateLabel.text = episode?.airDate
+        
         return cell
     }
 
@@ -105,23 +118,20 @@ class LocationsTableViewController: UITableViewController {
 
 }
 
-extension LocationsTableViewController: LocationViewDelegate {
-    func displayPagedLocations(with pagedData: PagedData<Location>) {
-        self.pagedData = pagedData
-        self.locations = pagedData.results
+extension EpisodesTableViewController: EpisodeViewDelegate {
+    func displayPagedEpisodes(with pagedData: PagedData<Episode>) {
+        self.episodes = pagedData.results
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
     
-    func displayLocations(_ locations: [Location]) {
-        self.locations = locations
+    func displayEpisodes(_ episodes: [Episode]) {
+        self.episodes = episodes
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
-    
-    
 }

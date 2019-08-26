@@ -13,9 +13,39 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var showRegisterFormButton: UIButton!
+    
+    var isRegister: Bool = false {
+        didSet {
+            confirmPasswordTextField.isHidden = isRegister ? false : true
+            loginButton.isHidden = isRegister ? true : false
+            registerButton.isHidden = isRegister ? false : true
+            
+            if isRegister {
+                showRegisterFormButton.setTitle("Back to Log In", for: .normal)
+            } else {
+                showRegisterFormButton.setTitle("Don't have an account? Register", for: .normal)
+            }
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        #if DEBUG
+        print("DEBUG")
+        #endif
+        
+        #if RELEASE
+        print("RELEASE")
+        #endif
         // Do any additional setup after loading the view.
     }
     
@@ -31,7 +61,8 @@ class LoginViewController: UIViewController {
             if let error = error {
                 print(error)
             } else {
-                self.performSegue(withIdentifier: "goToMain", sender: nil)
+//                self.performSegue(withIdentifier: "goToMain", sender: nil)
+                self.dismiss(animated: true, completion: nil)
 //                let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //                let window = appDelegate.window
 //                let mainController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
@@ -41,6 +72,9 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func showRegisterButtonTapped(_ sender: UIButton) {
+        isRegister = !isRegister
+    }
     /*
     // MARK: - Navigation
 
@@ -50,10 +84,5 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func unwindToLogin(_ unwindSegue: UIStoryboardSegue) {
-//        let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
-    }
 
 }

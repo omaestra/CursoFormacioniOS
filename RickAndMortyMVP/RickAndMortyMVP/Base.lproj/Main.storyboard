@@ -33,7 +33,7 @@
         <scene sceneID="6ok-SJ-CSH">
             <objects>
                 <viewControllerPlaceholder storyboardName="Locations" id="wZK-0p-Sug" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xGy-aw-eks"/>
+                    <tabBarItem key="tabBarItem" title="Locations" image="location" selectedImage="location_filled" id="xGy-aw-eks"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jx-rP-Enm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,7 +46,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LT5-lJ-53a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="7ep-B7-LPE" kind="relationship" relationship="viewControllers" id="KWe-7I-lqq"/>
@@ -63,5 +62,7 @@
         <image name="characters_filled" width="25" height="25"/>
         <image name="episodes" width="32" height="32"/>
         <image name="episodes_filled" width="32" height="32"/>
+        <image name="location" width="32" height="32"/>
+        <image name="location_filled" width="32" height="32"/>
     </resources>
 </document>
